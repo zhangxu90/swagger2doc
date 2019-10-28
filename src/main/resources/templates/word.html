@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="application/msword"/>
+    <meta content="application/msword" http-equiv="Content-Type"/>
     <title>toWord</title>
     <style type="text/css">
         .bg {
-            background-color: rgb(84, 127, 177);
+            background-color: rgb(190, 212, 239);
         }
 
         table {
@@ -33,11 +33,7 @@
 <body>
 <div style="width:800px; margin: 0 auto">
     <div th:each="table:${tables}">
-        <!--这个是类的说明-->
-        <h4 th:text="${table.title}"></h4>
-        <!--这个是每个请求的说明，方便生成文档后进行整理-->
-        <h5 th:text="${table.tag}"></h5>
-        <table border="1" cellspacing="0" cellpadding="0" width="100%">
+        <table border="1" cellpadding="0" cellspacing="0" width="100%">
             <tr class="bg">
                 <td colspan="5" th:text="${table.tag}"></td>
             </tr>
@@ -62,7 +58,7 @@
                 <td colspan="4" th:text="${table.responseForm}"></td>
             </tr>
 
-            <tr class="bg" align="center">
+            <tr align="center" class="bg">
                 <td>参数名</td>
                 <td>数据类型</td>
                 <td>参数类型</td>
@@ -79,7 +75,7 @@
                 <td th:text="${request.remark}"></td>
             </tr>
 
-            <tr class="bg" align="center">
+            <tr align="center" class="bg">
                 <td>状态码</td>
                 <td>描述</td>
                 <td colspan="3">说明</td>

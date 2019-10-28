@@ -13,7 +13,7 @@ public class TestController {
 
 	@ResponseBody
 	@ApiOperation(value = "测试1方法value", notes = "测试1方法notes")
-	@RequestMapping(value = "/test1", method = RequestMethod.POST)
+	@RequestMapping(value = "/test1")
 	public User test1(@RequestBody User user) {
 		System.out.println("user:::" + user.toString());
 		return user;

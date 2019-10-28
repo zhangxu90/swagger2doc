@@ -2,7 +2,7 @@ package com.zx.swagger.word.entity;
 
 import java.util.Map;
 
-public class ApiDoc {
+public class ApiJson {
 	private String basePath;
 	private String host;
 	private String swagger;

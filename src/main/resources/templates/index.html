@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>swagger to word</title>
+    <title>swagger to doc</title>
 </head>
 <body>
-<h2>Hello Swagger--word !</h2>
-
+<h2>hello swagger to doc</h2>
 <div>
-    swagger json url : <input style="width: 50%;" type="text" value="https://petstore.swagger.io/v2/swagger.json"> <input type="button" value="download">
-</div>
+    <form method="post" action="/preview">
+        swagger json url : <input style="width: 50%;" name="url" type="text" value="https://petstore.swagger.io/v2/swagger.json"> <input type="submit" value="preview">
+    </form>
 
+</div>
+<script src="/js/jquery-3.4.1.min.js"></script>
 </body>
 </html>
