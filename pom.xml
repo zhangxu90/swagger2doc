@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.zx.swagger</groupId>
-	<artifactId>swagger_word</artifactId>
+	<artifactId>swagger2doc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>word</name>
 	<description>一个swagger转word的工具</description>
