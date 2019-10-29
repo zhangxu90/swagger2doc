@@ -13,7 +13,7 @@ public class TestController {
 
 	@ResponseBody
 	@ApiOperation(value = "测试1方法value", notes = "测试1方法notes")
-	@RequestMapping(value = "/test1")
+	@RequestMapping(value = "/test1", method = RequestMethod.POST)
 	public User test1(@RequestBody User user) {
 		System.out.println("user:::" + user.toString());
 		return user;
@@ -21,10 +21,22 @@ public class TestController {
 
 	@ResponseBody
 	@ApiOperation(value = "测试2方法value", notes = "测试2方法notes")
-	@RequestMapping(value = "/test2", method = RequestMethod.POST)
-	public String test2(@RequestParam String str, @RequestParam String str2) {
-		System.out.printf(str);
-		return str;
+	@RequestMapping(value = "/test2")
+	public User test2(@RequestParam String str, @RequestBody User user, @RequestBody User use2r) {
+		return user;
+	}
+
+	@ResponseBody
+	@ApiOperation(value = "测试3方法value", notes = "测试3方法notes")
+	@RequestMapping(value = "/test3")
+	public String test3(@RequestParam int ok) {
+		return null;
+	}
+
+	@ResponseBody
+	@ApiOperation(value = "测试4方法value", notes = "测试4方法notes")
+	@RequestMapping(value = "/test4")
+	public void test4() {
 	}
 
 }

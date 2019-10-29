@@ -3,7 +3,7 @@ package com.zx.swagger.word.vo;
 /**
  * Created by zx on 2019/10/28
  */
-public class Parameter {
+public class ParameterVO {
 	// eg 参数名 dto
 	private String name;
 

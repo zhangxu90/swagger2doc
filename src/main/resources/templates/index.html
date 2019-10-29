@@ -7,7 +7,9 @@
 <h2>hello swagger to doc</h2>
 <div>
     <form method="post" action="/preview">
-        swagger json url : <input style="width: 50%;" name="url" type="text" value="https://petstore.swagger.io/v2/swagger.json"> <input type="submit" value="preview">
+        <input type="hidden" name="needButton" value="true">
+        swagger json url : <input style="width: 50%;" name="url" type="text" value="http://localhost:8000/v2/api-docs"> <input type="submit" value="preview">
+<!--        swagger json url : <input style="width: 50%;" name="url" type="text" value="https://petstore.swagger.io/v2/swagger.json"> <input type="submit" value="preview">-->
     </form>
 
 </div>

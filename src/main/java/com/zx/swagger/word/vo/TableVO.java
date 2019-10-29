@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by zx on 2019/10/28
  */
-public class Table {
+public class TableVO {
 
 	// eg 手机端日志查询
 	private String tag;
@@ -25,9 +25,9 @@ public class Table {
 	// eg 返回类型	*/*
 	private String responseType;
 
-	private List<Parameter> parameters;
+	private List<ParameterVO> parameters;
 
-	private List<Response> responses;
+	private List<ResponseVO> responses;
 
 	// eg {...}
 	private String requestExample;
@@ -83,19 +83,19 @@ public class Table {
 		this.responseType = responseType;
 	}
 
-	public List<Parameter> getParameters() {
+	public List<ParameterVO> getParameters() {
 		return parameters;
 	}
 
-	public void setParameters(List<Parameter> parameters) {
+	public void setParameters(List<ParameterVO> parameters) {
 		this.parameters = parameters;
 	}
 
-	public List<Response> getResponses() {
+	public List<ResponseVO> getResponses() {
 		return responses;
 	}
 
-	public void setResponses(List<Response> responses) {
+	public void setResponses(List<ResponseVO> responses) {
 		this.responses = responses;
 	}
 

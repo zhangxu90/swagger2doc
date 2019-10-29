@@ -1,4 +1,4 @@
-package com.zx.swagger.word;
+package com.zx.swagger.word.conf;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;

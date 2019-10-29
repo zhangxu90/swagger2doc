@@ -1,14 +1,15 @@
 package com.zx.swagger.word.entity;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ApiJson {
 	private String basePath;
 	private String host;
 	private String swagger;
-	private Map<String, Attributes> definitions;
+	private Map<String, Attributes> definitions = new HashMap<>();
 	private Info info;
-	private Map<String, Map<String, Method>> paths;
+	private Map<String, Map<String, Method>> paths = new HashMap<>();
 	private Tag[] tags;
 
 	public Tag[] getTags() {

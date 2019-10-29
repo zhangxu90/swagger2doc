@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="application/msword" http-equiv="Content-Type">
+    <title>preview</title>
+    <style type="text/css">
+        .bg  {
+            background-color: rgb(190, 212, 239);
+        }
+
+        table {
+            table-layout: fixed;
+        }
+
+        pre {
+            font-size: 12px;
+        }
+
+        tr  {
+            font-size: 15px;
+        }
+
+        td {
+            overflow: hidden;
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+
+        .specialHeight {
+            height: 40px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+<div style="text-align: center;" th:if="${needButton}">
+    <a href="/">返回</a>
+    <form action="/download" method="post">
+        <input type="hidden" name="url" th:value="${url}">
+        <input type="submit" value="download">
+    </form>
+</div>
+<div style="width:800px; margin: 0 auto">
+    <div th:each="table:${tables}">
+        <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <tbody>
+            <tr class="bg">
+                <td colspan="5" th:text="${table.tag}"></td>
+            </tr>
+            <tr>
+                <td>接口描述</td>
+                <td colspan="4" th:text="${table.describe}"></td>
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td colspan="4" th:text="${table.url}"></td>
+            </tr>
+            <tr>
+                <td>请求方式</td>
+                <td colspan="4" th:text="${table.method}"></td>
+            </tr>
+            <tr>
+                <td>请求类型</td>
+                <td colspan="4" th:text="${table.requestType}"></td>
+            </tr>
+            <tr>
+                <td>返回类型</td>
+                <td colspan="4" th:text="${table.responseType}"></td>
+            </tr>
+
+            <tr align="center" class="bg">
+                <td width="15%">参数名</td>
+                <td width="15%">数据类型</td>
+                <td width="15%">参数类型</td>
+                <td width="15%">是否必填</td>
+                <td>说明</td>
+            </tr>
+
+            <tr align="center" th:each="parameter:${table.parameters}">
+                <td th:text="${parameter.name}"></td>
+                <td th:text="${parameter.dataType}"></td>
+                <td th:text="${parameter.paraType}"></td>
+                <td th:text="${parameter.required}"></td>
+                <td th:text="${parameter.describe}"></td>
+            </tr>
+
+            <tr align="center" class="bg">
+                <td>状态码</td>
+                <td>描述</td>
+                <td colspan="3">说明</td>
+            </tr>
+
+            <tr align="center" th:each="response:${table.responses}">
+                <td th:text="${response.statusCode}"></td>
+                <td th:text="${response.describe}"></td>
+                <td colspan="3" th:text="${response.describe}"></td>
+            </tr>
+
+            <tr class="bg">
+                <td colspan="5">示例</td>
+            </tr>
+            <tr class="specialHeight">
+                <td class="bg">请求参数</td>
+                <td colspan="4">
+                    <pre th:text="${table.requestExample}"></pre>
+                </td>
+            </tr>
+            <tr class="specialHeight">
+                <td class="bg">返回值</td>
+                <td colspan="4">
+                    <pre th:text="${table.responseExample}"></pre>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+
+</div>
+
+
+</body>
+</html>

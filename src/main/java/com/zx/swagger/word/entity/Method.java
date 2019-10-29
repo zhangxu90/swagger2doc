@@ -6,15 +6,15 @@ import java.util.Map;
  * Created by zx on 2019/10/24
  */
 public class Method {
-	private String[] consumes;
+	private String[] consumes = new String[0];
 	private boolean deprecated;
 	private String description;
 	private String operationId;
 	private String summary;
 	private String[] tags;
-	private Parameter[] parameters;
-	private String[] produces;
-	private Map<String,Response> responses;
+	private Parameter[] parameters = new Parameter[0];
+	private String[] produces = new String[0];
+	private Map<String, Response> responses;
 
 	public String[] getConsumes() {
 		return consumes;

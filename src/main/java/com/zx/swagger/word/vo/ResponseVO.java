@@ -3,7 +3,7 @@ package com.zx.swagger.word.vo;
 /**
  * Created by zx on 2019/10/28
  */
-public class Response {
+public class ResponseVO {
 	// eg 状态码 200
 	private String statusCode;
 
