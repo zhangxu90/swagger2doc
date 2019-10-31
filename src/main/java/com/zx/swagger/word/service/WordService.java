@@ -17,6 +17,7 @@ import org.springframework.util.Assert;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by zx on 2019/10/28
@@ -31,8 +32,13 @@ public class WordService {
 	private Integer port;
 
 	public String fetchHtmlFromUrl(String url) {
-		String s = restTemplate.postForObject("http://localhost:" + port + "/preview?url="+url,null, String.class);
+		String s = restTemplate.postForObject("http://localhost:" + port + "/preview?url=" + url, null, String.class);
 		return s;
+	}
+
+	public Map<String, List<TableVO>> groupingByTag(List<TableVO> tableVOS) {
+		Map<String, List<TableVO>> collect = tableVOS.stream().collect(Collectors.groupingBy(TableVO::getTag));
+		return collect;
 	}
 
 	public List<TableVO> fetchTablesFromUrl(String url) {
@@ -159,6 +165,8 @@ public class WordService {
 			String type = v.getType();
 			if ($ref1 == null) {
 				tmp.put(k, type);
+			} else if ($ref.equals($ref1)) {
+				tmp.put(k, "{}");
 			} else {
 				tmp.put(k, getRef(definitions, $ref1));
 			}

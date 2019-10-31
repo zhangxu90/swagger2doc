@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@Api(description = "swagger 测试控制器", tags = {"阿萨德"})
+@Api(description = "swagger 测试控制器", tags = {"阿萨德","电饭锅"})
 public class TestController {
 
 	@ResponseBody

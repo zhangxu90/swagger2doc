@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class WordController {
@@ -26,7 +27,8 @@ public class WordController {
 	@RequestMapping(path = "/preview", method = RequestMethod.POST)
 	public String preview(@RequestParam String url, @RequestParam(required = false) boolean needButton, Model model) {
 		List<TableVO> tableVOS = wordService.fetchTablesFromUrl(url);
-		model.addAttribute("tables", tableVOS);
+		Map<String, List<TableVO>> byTag = wordService.groupingByTag(tableVOS);
+		model.addAttribute("voMap", byTag);
 		model.addAttribute("needButton", needButton);
 		model.addAttribute("url", url);
 		return "preview";
