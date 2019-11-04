@@ -13,6 +13,9 @@
 
         table {
             table-layout: fixed;
+            border:1px solid #000;
+            border-right:none;
+            border-bottom:none;
         }
 
         pre {
@@ -21,12 +24,15 @@
 
         tr  {
             font-size: 15px;
+
         }
 
         td {
             overflow: hidden;
             word-break: break-all;
             word-wrap: break-word;
+            border-bottom:1px solid #000;
+            border-right:1px solid #000;
         }
 
         .specialHeight {
@@ -51,7 +57,7 @@
     <div th:each="map:${voMap}">
         <h3 th:text="${map.key}"></h3>
         <div th:each="table:${map.value}">
-            <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <table cellpadding="0" cellspacing="0" width="100%">
                 <tbody>
                 <tr class="bg">
                     <td colspan="5"><b th:text="${table.describe}?:'&nbsp;'"></b></td>
